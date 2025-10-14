@@ -43,6 +43,8 @@
 
               <!-- Componente: Badge de género -->
               <span id="genero" class="badge bg-secondary"></span>
+              <!-- Componente: Estado y precio-->
+               <div id="estado-precio" class="mt-3"></div>
             </div>
           </div>
         </div>
@@ -70,7 +72,19 @@
               $("#poster").attr("src", "../img/" + peli.imagen);
               $("#sinopsis").text(peli.sinopsis);
               $("#trailer").attr("src", peli.trailer);
-              $("#genero").text(peli.genero);
+              $("#genero").text(Array.isArray(peli.genero) ? peli.genero.join(", ") : peli.genero);
+
+              // Logica para estado y precio
+              const hoy = new Date();
+              const fechaEstreno = new Date(peli.estreno);
+              const esEstreno = hoy < fechaEstreno;
+              const precio = esEstreno ? peli.precio.estreno : peli.precio.normal;
+              const estado = esEstreno ? "Estreno" : "Cartelera";
+              const badgeColor = esEstreno ? "success" : "secondary";
+              $("#estado-precio").html(`
+              <span class="badge bg-${badgeColor}">${estado}</span>
+              <p class="mt-2"><strong>Precio actual:</strong> $${precio.toFixed(2)}</p>
+              `);
             } else {
               mostrarError();
             }
