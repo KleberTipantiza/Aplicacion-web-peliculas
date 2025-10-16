@@ -1,0 +1,69 @@
+[
+  {
+    "idPelicula": 1,
+    "reseñas": [
+      { "autor": "Gabo", "comentario": "Dune - Una gran película de ciencia ficción moderna.", "calificacion": 4 },
+      { "autor": "Jammes", "comentario": "Es una obra maestra y una fenomenal adaptación.", "calificacion": 5 },
+      { "autor": "Malana", "comentario": "Podría ser una obra maestra, si nos dan una segunda parte.", "calificacion": 4 }
+    ]
+  },
+  {
+    "idPelicula": 2,
+    "reseñas": [
+      { "autor": "Gabby", "comentario": "La disfruté.", "calificacion": 4 },
+      { "autor": "Jorge", "comentario": "Prefiero a Adam en peliculas de comedia.", "calificacion": 3 },
+      { "autor": "Ana", "comentario": "Me encantó la trama y los personajes.", "calificacion": 5 }
+    ]
+  },
+  {
+    "idPelicula": 3,
+    "reseñas": [
+      { "autor": "Luis", "comentario": "El Jokker de Heath Ledger es una actuación magistral.", "calificacion": 5 },
+      { "autor": "Marta", "comentario": "De las mejores peliculas de batman que he visto.", "calificacion": 5 },
+      { "autor": "Carlos", "comentario": "La rivalidad entre Batman y el Joker siempre es fascinante.", "calificacion": 5 }
+    ]
+  },
+  {
+    "idPelicula": 4,
+    "reseñas": [
+      { "autor": "Sofia", "comentario": "Una película llena de adrenalina y emoción.", "calificacion": 4 },
+      { "autor": "Diego", "comentario": "Me encantaron las escenas de carreras.", "calificacion": 5 },
+      { "autor": "Elena", "comentario": "La trama fue un poco predecible, pero entretenida.", "calificacion": 3 }
+    ]
+  },
+  {
+    "idPelicula": 5,
+    "reseñas": [
+      { "autor": "Ana", "comentario": "Una historia cruda y realista sobre la vida en México.", "calificacion": 4 },
+      { "autor": "Pedro", "comentario": "Los personajes son muy bien desarrollados.", "calificacion": 5 },
+      { "autor": "Lucia", "comentario": "Moloteco no merecia ese desenlace.", "calificacion": 3 },
+      {"autor": "Raul", "comentario": "La triste vida en mi lindo Mexico.", "calificacion": 4 }
+    ]
+  },
+  {
+    "idPelicula": 6,
+    "reseñas": [
+      { "autor": "Javier", "comentario": "Una película clásica que nunca pasa de moda.", "calificacion": 5 },
+      { "autor": "Miriam", "comentario": "La historia es muy conmovedora y bien actuada.", "calificacion": 4 },
+      { "autor": "Sergio", "comentario": "Me gustó, pero esperaba más acción.", "calificacion": 3 },
+      {"autor": "Clara", "comentario": "Una historia inspiradora sobre la superación personal.", "calificacion": 5 }
+    ]
+  },
+  {
+    "idPelicula": 7,
+    "reseñas": [
+      { "autor": "Natalia", "comentario": "Una película llena de acción.", "calificacion": 4 },
+      { "autor": "Fernando", "comentario": "Las escenas de deportes extremos son impresionantes.", "calificacion": 5 },
+      { "autor": "Marco", "comentario": "Personalmente me gusta mas la version antigua.", "calificacion": 3 }
+    ]
+  },
+  {
+    "idPelicula": 8,
+    "reseñas": [
+      { "autor": "Miguel", "comentario": "*Thunderbolts* es una emocionante adición al universo de Marvel.", "calificacion": 4 },
+      { "autor": "Laura", "comentario": "Me encantaron los nuevos vengadores.", "calificacion": 5 },
+      { "autor": "Andrés", "comentario": "La historia fue un poco confusa en algunos momentos.", "calificacion": 3 },
+      {"autor": "Kleber", "comentario": "Veremos como trata Marvel a Centric.", "calificacion": 4 }
+    ]
+  }
+]

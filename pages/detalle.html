@@ -49,6 +49,17 @@
           </div>
         </div>
       </div>
+      <!-- Componente: Reseñas-->
+      <div class="card mb-4">
+        <div class="row g-0">
+          <div class="col-md-12"> 
+            <div class="card-body">
+            <h5 class="card-title">Reseñas</h5>
+            <p id="reseñas" class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="text-center">
         <a href="../index.html" class="btn btn-secondary">Volver al inicio</a>
@@ -85,6 +96,34 @@
               <span class="badge bg-${badgeColor}">${estado}</span>
               <p class="mt-2"><strong>Precio actual:</strong> $${precio.toFixed(2)}</p>
               `);
+
+              // Reseñas
+              $.ajax({
+                url: "../data/reseñas.json",
+                method: "GET",
+                dataType: "json",
+                success: function (data){
+                  const grupo = data.find((r) => r.idPelicula == id);
+                  if (grupo && grupo.reseñas.length > 0) {
+                    let html = "";
+                    grupo.reseñas.forEach(function(r) {
+                      const estrellas = "★".repeat(r.calificacion) + "☆".repeat(5 - r.calificacion);
+                      html += `
+                      <p class="mb-3">
+                        <strong>${r.autor}</strong>: ${r.comentario}
+                        <span class="text-warning">${estrellas}</span>
+                      </p>
+                      `;
+                    });
+                    $("#reseñas").html(html);
+                  } else {
+                    $("#reseñas").html("<p>No hay reseñas disponibles.</p>");
+                  }
+                },
+                error: function() {
+                  $("#reseñas").html("<p>No se pudieron cargar las reseñas.</p>");
+                }
+              });
             } else {
               mostrarError();
             }

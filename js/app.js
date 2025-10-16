@@ -1,4 +1,14 @@
 $(document).ready(function () {
+  // Mostrar spinner de carga
+  $("#lista-peliculas").html(`
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-3">Cargando peliculas...</p>
+    </div>
+  `);
+
+  // Simulacion de retraso 
+  setTimeout(() => {
     $.ajax({
       url: "data/peliculas.json",
       method: "GET",
@@ -27,7 +37,7 @@ $(document).ready(function () {
               </div>
             </div>`;
         });
-        $("#lista-peliculas").html(html);
+        $("#lista-peliculas").hide().html(html).fadeIn(1000); // Animacion de entrada
       },
       error: function (xhr, status, error) {
         console.error("Error al cargar las películas:", error);
@@ -40,5 +50,6 @@ $(document).ready(function () {
         `);
       }
     });
+    }, 3000); //3 segundos de espera
   });
   
