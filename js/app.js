@@ -7,6 +7,12 @@ $(document).ready(function () {
     </div>
   `);
 
+    // Manejo de la alerta de bienvenida con persistencia
+    if (!localStorage.getItem("bienvenidaMostrada")) {
+      $("#alertaBienvenida").removeClass("d-none").hide().slideDown();
+      localStorage.setItem("bienvenidaMostrada", "true");
+    }
+
   // Simulacion de retraso 
   setTimeout(() => {
     $.ajax({
@@ -33,6 +39,10 @@ $(document).ready(function () {
                   <p class="card-text"><strong>Estreno:</strong> ${peli.estreno}</p>
                   <p class="card-text"><strong>Precio:</strong> $${precio.toFixed(2)}</p>
                   <a href="pages/detalle.html?id=${peli.id}" class="btn btn-primary">Ver más</a>
+                  <button class="btn btn-primary ver-trailer"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalTrailer"
+                    data-trailer="${peli.trailer}">Ver Trailer</button>
                 </div>
               </div>
             </div>`;
@@ -50,6 +60,17 @@ $(document).ready(function () {
         `);
       }
     });
-    }, 3000); //3 segundos de espera
+  }, 1000); //1 segundo de espera
+
+  // Evento para abrir el modal del tráiler
+  $(document).on("click", ".ver-trailer", function () {
+    const url = $(this).data("trailer");
+    $("#iframeTrailer").attr("src", url);
+
+    //Cerrar el modal
+    $('#modalTrailer').on('hidden.bs.modal', function () {
+      $("#iframeTrailer").attr("src", "");
+    });
+
   });
-  
+});

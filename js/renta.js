@@ -62,5 +62,14 @@ $(document).ready(function() {
 
         const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
         modal.show();
+
+        // Manejar confirmación de la renta
+        $('#btn-confirmar').off('click').on('click', function() {
+            $('#alerta').removeClass('d-none').hide().fadeIn();
+            setTimeout(() => $('#alerta').fadeOut(), 2000);
+            $('#form-renta')[0].reset();
+            $('#pelicula').val(null).trigger('change'); // Resetear Select2
+            modal.hide();
+        });
     });
 });

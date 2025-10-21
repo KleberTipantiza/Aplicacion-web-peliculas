@@ -2,8 +2,38 @@ body {
     background-color: #f8f9fa;
   }
   
+  body{
+    font-family: 'Merriweather', serif;
+  }
+  
+  .navbar {
+    background-color: #2e1a1f;
+  }
+
+  .btn-primary {
+    background-color: #0f3460;
+    border-color: #0f3460;
+  }
+
   .card img {
     height: 250px;
     object-fit: cover;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  footer {
+    margin-top: auto;
   }
   
